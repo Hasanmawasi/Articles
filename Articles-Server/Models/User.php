@@ -12,6 +12,10 @@ class User extends UserSkeleton{
     
     public function createUser($username,$email,$password){
         parent::__construct($username,$email,$password);
+        if($this->findUser($email)){
+            echo json_encode(["success"=>false,"message"=>"User is already exist!"]);
+            return;
+        }
         $sql="INSERT INTO users(username,email,password) VALUES(?,?,?);";
         $hashed_password = hash('sha256',$password);
         $stmt = $this->db->prepare($sql);
@@ -47,13 +51,25 @@ class User extends UserSkeleton{
             return;
         }
     }
-    
+
     public function verifyPassword($enteredPassword, $storedPassword){
         $hash_password = hash('sha256',$enteredPassword);
         if($hash_password == $storedPassword){
             return true;
         }
         return false;
+    }
+    public function findUser($email){
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("s",$email);
+        if($stmt->execute()){
+            $result= $stmt->get_result();
+            if($result-> num_rows >0){
+                return true;
+            }
+            return false;
+        }
     }
 }
 
