@@ -4,17 +4,18 @@ require_once 'UserSkeleton.php';
 class User extends UserSkeleton{
     private $db;
 
-    public function __construct($db,$username,$email,$password)
+    public function __construct($db)
     {
-        parent::__construct($username,$email,$password);
+        // parent::__construct($username,$email,$password);
         $this->db = $db;
     }
     
-    public function createUser(){
+    public function createUser($username,$email,$password){
+        parent::__construct($username,$email,$password);
         $sql="INSERT INTO users(username,email,password) VALUES(?,?,?)";
-        $username = $this->getUsername();
-        $email=$this->getEmail();
-        $password=$this->getPassword();
+        // $username = $this->getUsername();
+        // $email=$this->getEmail();
+        // $password=$this->getPassword();
         $hashed_password = hash($password,MHASH_SHA256);
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param("sss",$username,$email,$hashed_password);
@@ -32,12 +33,13 @@ class User extends UserSkeleton{
             if($result-> num_rows >0){
                 $row =$result->fetch_assoc();
                 if($this->verifyPassword($enteredPassword,$row["password"])){
-                    return true;
+                   echo json_encode(["success"=>true,"message"=>"user loged"]);
+                    return;
                 }
-                echo "wrong password";
+                echo json_encode(["success"=>false,"message"=>"wrong password"]);
             }
-            echo "email not found";
-            return false;
+            echo json_encode(["success"=>false,"message"=>"email not found"]);
+            return;
         }
     }
     public function verifyPassword($enteredPassword, $storedPassword){
