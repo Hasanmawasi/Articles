@@ -14,7 +14,11 @@
 html{
     font-size: 10px;
 }
-
+a{
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
 .flex{
     display: flex;
 }
@@ -34,14 +38,14 @@ html{
 .title{
     font-size: 4rem;
     font-weight: bold;
-
+    margin: 1rem 0;
 }
 .form {
     display: flex;
     flex-direction: column;
     background-color:var(--fourth-color);
     border-radius: 1rem;
-    width: 30%;
+    width: 40%;
     height: fit-content;
     justify-content: center;
     align-items: center;
@@ -70,7 +74,7 @@ html{
    border-color:var(--primary-color);
 }
 .submit-btn{
-    width: 9rem;
+    width: 60%;
     padding: 5px;
     background-color: var(--primary-color);
     border: none;
@@ -79,7 +83,9 @@ html{
     cursor: pointer;
 }
 .submit-btn p{
+    font-size: 1.1em;
     font-weight: bolder;
+    padding: .2em;
 }
 
 .message{
@@ -89,6 +95,9 @@ html{
 .error-color{
     color: red;
 }
+.link-form{
+    font-size: 14px;
+}
 /* end forms */
 .login-signup-body{
     height: 100vh;
@@ -96,5 +105,17 @@ html{
 }
 
 @media (min-width:0) and (max-width:720px) {
-    
+    .form{
+        width: 60%;
+        height: 50%;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .form-title{
+        font-size: 2rem;
+    }
+    .form-input label, .form-input input{
+        font-size: 1rem;
+    }
 }

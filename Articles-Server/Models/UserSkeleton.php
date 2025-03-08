@@ -14,7 +14,7 @@ class UserSkeleton{
 
     }
     public function setID($id){
-        $this->id -> $id;
+        $this->id =$id;
     }
     public function getID(){
         return $this->id;
@@ -41,7 +41,7 @@ class UserSkeleton{
         return [
             "user_id"=>$this->getID(),
             "username"=>$this->getUsername(),
-            "email"=>$this->getPassword()
+            "email"=>$this->getEmail()
         ];
     }
 }

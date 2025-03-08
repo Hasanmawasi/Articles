@@ -38,3 +38,29 @@ articlePage.load_index = async function () {
         articlePage.index.login();
     })
 }
+
+  articlePage.load_signup= function (){
+    articlePage.signup={};
+    articlePage.signup.signup_api= articlePage.base_url+"signup.php";
+
+    articlePage.signup.signupData = async function() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const responseData= await articlePage.post_data(articlePage.signup.signup_api,{
+            username,
+            email,
+            password
+        });
+        console.log(responseData);
+        if (responseData.success) {
+           console.log(responseData.success)
+           window.location.href="home.html";
+        }
+
+    }
+   document.getElementById("submitsignup").addEventListener('click',()=>{
+    articlePage.signup.signupData();
+   })
+  }
