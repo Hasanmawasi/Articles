@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFF2C2;  
+    --secondary-color:#FFFDF0;
+    --third-color:#EFF3EA;
+    --fourth-color:#D9DFC6;
+}
+  
+html{
+    font-size: 10px;
+}
+
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.hide{
+    display: none;
+}
+/* forms */
+.title{
+    font-size: 4rem;
+    font-weight: bold;
+
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color:var(--fourth-color);
+    border-radius: 1rem;
+    width: 30%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.form-title{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 1rem;
+}
+.form-input label{
+    font-size: 2rem;
+}
+.form-input input{
+    border-radius: 0.3rem;
+    border: 2px solid var(--fourth-color);
+    height: 2.5rem;
+    
+}
+.form-input input:focus{
+   outline: none;
+   border-color:var(--primary-color);
+}
+.submit-btn{
+    width: 9rem;
+    padding: 5px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+.submit-btn p{
+    font-weight: bolder;
+}
+
+.message{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.error-color{
+    color: red;
+}
+/* end forms */
+.login-signup-body{
+    height: 100vh;
+    background-color: #FFF2C2;
+}
