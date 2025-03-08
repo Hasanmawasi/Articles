@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Sign UP</title>
+</head>
+<body class="login-signup-body flex flex-column justify-center align-center">
+    <h1 class="title">SDLC Articles</h1>
+    <div class="form"> 
+        <h2 class="form-title" >Sign up</h2>
+        <div class="message error-color hide">
+    
+        </div>
+        <div class="form-input">
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" placeholder="user name" required>
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+        </div>
+        <div class="link-form">
+            <p>Already have an account? <span><a href="index.html">Login</a></span></p>
+        </div>
+        <button class="submit-btn" id="submitsignup"><p>Sign Up</p></button>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js/article_pages.js" ></script>
+        <script>
+            articlePage.loadFor("signup");
+        </script>
+   </div>
+</body>
+</html>
