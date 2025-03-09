@@ -10,7 +10,11 @@ $data = json_decode(file_get_contents("php://input"),true);
     }
 
     $Question = new Question($mysqli);
-    $Question->createQuestion($data['question'],$data['answer']);
+    if($Question->createQuestion($data['question'],$data['answer'])){
+        echo json_encode(["success"=> true,"message"=>"Q & A added successfully!"]);
+        return;
+    }
+    echo json_encode(["success"=> false,"message"=>"Q & A failed to  added"]);
 
 
 

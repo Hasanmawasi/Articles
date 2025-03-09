@@ -118,3 +118,21 @@ articlePage.load_index = async function () {
     }
 
   }
+
+  articlePage.load_addQA = function(){
+    articlePage.addQA = {};
+    articlePage.addQA.createQA_api = articlePage.base_url+"addQuestion.php";
+
+    document.getElementById("submitQA").addEventListener('click',()=>{
+        articlePage.addQA.createQA();
+    })
+    articlePage.addQA.createQA = async function (){
+        const question = document.getElementById("question").value;
+        const answer = document.getElementById("answer").value;
+       const responseData= await articlePage.post_data(articlePage.addQA.createQA_api,{
+            question,
+            answer
+        })
+        console.log(responseData);
+    }
+  }

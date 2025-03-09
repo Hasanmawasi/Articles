@@ -177,6 +177,10 @@ a{
     overflow: visible;        
     text-overflow: none; 
 }
+
+.QA-input input {
+    height: 5rem;
+}
 .hidden {
     display: none;
 }
@@ -210,5 +214,8 @@ footer{
         overflow: visible;        
         text-overflow: none; 
         height: 20rem;
+    }
+    .QA-input input {
+        height: 3rem;
     }
 }
