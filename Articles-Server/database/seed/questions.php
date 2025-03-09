@@ -2,7 +2,7 @@
 
 require_once '../../connection/connection.php'; 
 $sql = "INSERT INTO qas(quetion,answer) values(?,?);";
-if($stmt-> $mysqli->prepare($sql)){
+if($stmt= $mysqli->prepare($sql)){
 
     $questions = [
         "qas" => [
