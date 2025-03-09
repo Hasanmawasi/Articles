@@ -13,7 +13,14 @@ articlePage.post_data =async function(url,data){
         console.log(error);
     }
 }
-
+articlePage.get_data =async function(url){
+    try {
+      const response=await  axios.get(url);
+      return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
 articlePage.load_index = async function () {
     articlePage.index={};
     articlePage.index.loginApi =  articlePage.base_url+"login.php";
@@ -67,11 +74,34 @@ articlePage.load_index = async function () {
 
   articlePage.load_home = function (){
     articlePage.home={};
-
+    articlePage.home.getQuestionApi =articlePage.base_url+"getQuestions.php";
     let searchbar = document.getElementById("searchInput");
     searchbar.addEventListener('keyup',()=>{
         articlePage.home.search();
     });
+
+    articlePage.home.getQuestions = async function() {
+      const responseData= await  articlePage.get_data(articlePage.home.getQuestionApi);
+      const Qarray = responseData.questions;
+      articlePage.home.createCard(Qarray);
+      console.log(Qarray);
+    }
+    articlePage.home.getQuestions();
+    articlePage.home.createCard = function(array){
+        const cardCont = document.getElementById("cardContainer");
+        array.forEach((question)=>{
+          let card =   ` <div class="card">
+                <div class="card-question">
+                    <p>${question.quetion}</p>
+                </div>
+                <div class="border"></div>
+                <div class="card-answer">
+                    <p>${question.answer}</p>
+                </div>
+           </div>`;
+            cardCont.innerHTML+=card;
+        });
+    }
     // search function
     articlePage.home.search = function(){
         let filter = document.getElementById("searchInput").value.toLowerCase();
