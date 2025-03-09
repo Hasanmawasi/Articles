@@ -13,7 +13,7 @@ class User extends UserSkeleton{
     public function createUser($username,$email,$password){
         parent::__construct($username,$email,$password);
         if($this->findUser($email)){
-            echo json_encode(["success"=>false,"message"=>"User is already exist!"]);
+            echo json_encode(["success"=>false,"message"=>"User Email is already exist!"]);
             return;
         }
         $sql="INSERT INTO users(username,email,password) VALUES(?,?,?);";
@@ -46,6 +46,7 @@ class User extends UserSkeleton{
                     return;
                 }
                 echo json_encode(["success"=>false,"message"=>"wrong password"]);
+                return;
             }
             echo json_encode(["success"=>false,"message"=>"email not found"]);
             return;
