@@ -30,7 +30,7 @@ class Question extends QuestionSkeleton{
                 while($row=$result->fetch_assoc()){
                     array_push($data,$row);
                 }
-                return $data;
+                return $data ;
             }
         }
     }
