@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>
+        home
+    </title>
+</head>
+<body >
+    <nav class="flex navbar ">
+        <h2>Articles</h2>
+        <h2>Q/A SDLC Articles</h2>
+        <button class="nav-btn"><p>logout</p></button>
+    </nav>
+    <div class="border" ></div>
+    <main class="flex flex-column justify-center align-center">
+        <h2 class="title">Add Question & Answer</h2>
+        <div class="form">
+            <h2 class="form-title" >Q & A  Form</h2>
+        <div class="message error-color hide">
+           
+        </div>
+        <div class="form-input QA-input">
+            <label for="question">Question</label>
+            <input type="text" name="question" id="question" placeholder="Add Question " required>
+        </div>
+        <div class="form-input QA-input">
+            <label for="answer">Answer</label>
+            <input type="text" name="answer" id="answer" placeholder="Enter Answer" required>
+        </div>
+        <button class="submit-btn" id="submitQA"><p>Create</p></button>
+        </div>
+    </main>
+    <footer>
+        <div class="border"></div>
+        <div class="flex justify-center align-center">
+            copy right 
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="JS/article_pages.js" ></script>
+    <script>
+        articlePage.loadFor("addQA");
+    </script>
+</body>
+</html>
