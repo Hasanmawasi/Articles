@@ -13,7 +13,7 @@ $data = json_decode(file_get_contents("php://input"),true);
     $User = new User($mysqli);
     $createdUser= $User->createUser($data['username'],$data['email'],$data['password']);
     if($createdUser){
-        echo json_encode(["user"=>$createdUser]);
+        echo json_encode(["success"=>true, "users"=>$createdUser]);
     }
 
 ?>
