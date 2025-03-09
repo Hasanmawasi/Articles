@@ -184,7 +184,9 @@ a{
 .hidden {
     display: none;
 }
-
+.bodyQA{
+    height: 80vh;
+}
 footer{
     margin: 1rem 0;
 }

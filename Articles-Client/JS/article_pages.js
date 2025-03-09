@@ -35,10 +35,13 @@ articlePage.load_index = async function () {
         password,
         });
         console.log(responseData);
+
      if (responseData.success) {
-        console.log(responseData.success)
         window.location.href="home.html";
+     }else{
+        popMessage("message",responseData.message);
      }
+
     }
     const submitLogin = document.getElementById("submitLogin");
     submitLogin.addEventListener('click',()=>{
@@ -64,7 +67,9 @@ articlePage.load_index = async function () {
         if (responseData.success) {
            console.log(responseData.success)
            window.location.href="home.html";
-        }
+        }else{
+            popMessage("message",responseData.message);
+         }
 
     }
    document.getElementById("submitsignup").addEventListener('click',()=>{
@@ -134,5 +139,18 @@ articlePage.load_index = async function () {
             answer
         })
         console.log(responseData);
+        if(responseData.success){
+            popMessage("message",responseData.message)
+        }else{
+            popMessage("message",responseData.message)
+        }
     }
+  }
+  function popMessage(id,message){
+      document.getElementById(id).innerText= message ;
+     document.getElementById(id).classList.remove("hide");
+    setTimeout(() => {
+     document.getElementById(id).classList.add("hide");
+     document.getElementById(id).innerText= "" ;
+    }, 2000);
   }

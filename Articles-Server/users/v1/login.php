@@ -11,7 +11,8 @@ $data = json_decode(file_get_contents("php://input"),true);
     }
     $User = new User($mysqli);
     if($User->loginUser($data['email'],$data['password'])){
-        return json_encode(["success"=>true,"message"=>"user logedin"]);
+        echo json_encode(["success"=>true,"message"=>"user logedin"]);
+        return;
     }
 
 
