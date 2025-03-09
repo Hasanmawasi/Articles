@@ -8,7 +8,7 @@ The **Articles** project is a web-based platform designed to store and display Q
 
 The website is hosted on a remote server and can be accessed via the following IP address:
 
-**http\://13.36.167.91/Articles-Client/index.html/**
+**http\://13.36.167.91/Articles-Client/index.html**
 
 Replace `13.36.167.91/Articles-Client/index.html` with the actual server IP address.
 
