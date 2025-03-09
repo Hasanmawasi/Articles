@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>
+        home
+    </title>
+</head>
+<body >
+    <nav class="flex navbar ">
+        <h2>Articles</h2>
+        <h2>Q/A SDLC Articles</h2>
+        <button class="nav-btn"><p>logout</p></button>
+    </nav>
+    <div class="border" ></div>
+    <main class="flex flex-column justify-center align-center">
+        <div class="search-container">
+            <div class="searchbar flex justify-center align-center">
+                <div class="form-input ">
+                    <input type="text" id="searchInput"  placeholder="Search for Q/A">
+                </div>
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></i>
+            </div> 
+        </div>
+        <div class="container flex justify-center align-center">
+            <div class="card">
+                <div class="card-question">
+                    <p >How does the V-Model differ from the Waterfall Model?</p>
+                </div>
+                <div class="border"></div>
+                <div class="card-answer">
+                    <p>The V-Model integrates testing at every stage, ensuring built-in quality 
+                        assurance. Unlike the Waterfall Model, which tests only after development is
+                         complete, the V-Model validates each phase early to prevent major issues later.
+                        </p>
+                </div>
+            </div>
+            <!-- ========================== -->
+            <div class="card">
+                <div class="card-question">
+                    <p >How does the V-Model differ from the Waterfall Model?</p>
+                </div>
+                <div class="border"></div>
+                <div class="card-answer">
+                    <p>The V-Model integrates testing at every stage, ensuring built-in quality 
+                        assurance. Unlike the Waterfall Model, which tests only after development is
+                         complete, the V-Model validates each phase early to prevent major issues later.
+                        </p>
+                </div>
+            </div><div class="card">
+                <div class="card-question">
+                    <p >How does the V-Model differ from the Waterfall Model?</p>
+                </div>
+                <div class="border"></div>
+                <div class="card-answer">
+                    <p>The V-Model integrates testing at every stage, ensuring built-in quality 
+                        assurance. Unlike the Waterfall Model, which tests only after development is
+                         complete, the V-Model validates each phase early to prevent major issues later.
+                        </p>
+                </div>
+            </div><div class="card">
+                <div class="card-question">
+                    <p >SDLC?</p>
+                </div>
+                <div class="border"></div>
+                <div class="card-answer">
+                    <p>The V-Model integrates testing at every stage, ensuring built-in quality 
+                        assurance. Unlike the Waterfall Model, which tests only after development is
+                         complete, the V-Model validates each phase early to prevent major issues later.
+                        </p>
+                </div>
+            </div>
+             <!-- ========================== -->
+        </div>
+    </main>
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            let filter = this.value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                let title = card.querySelector(".card-question").textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+    <footer>
+        <div class="border"></div>
+        <div class="flex justify-center align-center">
+            copy right 
+        </div>
+    </footer>
+</body>
+</html>

@@ -16,8 +16,22 @@ class Question extends QuestionSkeleton{
         $stmt= $this->db->prepare($sql);
         $stmt->bind_param("ss",$Ques, $Ans);
         if($stmt->execute()){
-             return $this->db->insert_id;
-            
+             return true;            
+        }
+        return false;
+    }
+    public function getQuestions(){
+        $sql="SELECT * FROM qas;";
+        $stmt = $this->db->prepare($sql);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if($result->num_rows >0){
+                $data=[];
+                while($row=$result->fetch_assoc()){
+                    array_push($data,$row);
+                }
+                return $data ;
+            }
         }
     }
 
