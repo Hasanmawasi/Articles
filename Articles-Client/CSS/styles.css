@@ -137,6 +137,9 @@ a{
     width: 70%;
     border-radius: 2rem;
 }
+.add-icon{
+    margin: 0 1rem;
+}
 /* end search bar */
 
 .container{
