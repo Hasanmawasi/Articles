@@ -98,10 +98,88 @@ a{
 .link-form{
     font-size: 14px;
 }
-/* end forms */
 .login-signup-body{
     height: 100vh;
     background-color: #FFF2C2;
+}
+/* end forms */
+/* NavBar */
+.navbar{
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary-color);
+    height: 5rem;
+}
+.border{
+    border-bottom: 3px solid var(--fourth-color);
+    width: 80%;
+    margin: 0 auto;
+}
+.nav-btn{
+    padding: 5px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+.nav-btn p{
+    font-size: 1em;
+    font-weight: 300;
+    padding: .2em;
+}
+/* End Navbar */
+
+/* search bar */
+.search-container{
+    margin: 1rem 0;
+    background-color: var(--third-color);
+    width: 70%;
+    border-radius: 2rem;
+}
+/* end search bar */
+
+.container{
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Q/A cards */
+.card{
+    width: 40%;
+    height: 20rem;
+    background-color: var(--secondary-color);
+    font-size: 18px;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;        
+    text-overflow: ellipsis; 
+
+}
+
+.card-question{
+    padding: 1em;
+    font-weight: 700;
+
+}
+.card-answer p{
+    width: 100%;
+    padding: 0.6em;
+    font-size:0.9em;
+}
+
+.card:hover{
+    height: fit-content;
+    overflow: visible;        
+    text-overflow: none; 
+}
+.hidden {
+    display: none;
+}
+
+footer{
+    margin: 1rem 0;
 }
 
 @media (min-width:0) and (max-width:720px) {
@@ -117,5 +195,17 @@ a{
     }
     .form-input label, .form-input input{
         font-size: 1rem;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .card{
+        width: 80%;
+        font-size: 15px;
+    }
+    .card:hover{
+        overflow: visible;        
+        text-overflow: none; 
+        height: 20rem;
     }
 }
