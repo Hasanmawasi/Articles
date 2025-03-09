@@ -1,5 +1,5 @@
 const articlePage={};
-articlePage.base_url = "http://localhost/Articles/Articles-Server/users/v1/";
+articlePage.base_url = "http://13.36.167.91/Articles-Server/users/v1/";
 
 articlePage.loadFor = function (pageName){
     eval("articlePage.load_"+pageName+"()");
