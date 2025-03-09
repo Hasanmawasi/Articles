@@ -64,3 +64,27 @@ articlePage.load_index = async function () {
     articlePage.signup.signupData();
    })
   }
+
+  articlePage.load_home = function (){
+    articlePage.home={};
+
+    let searchbar = document.getElementById("searchInput");
+    searchbar.addEventListener('keyup',()=>{
+        articlePage.home.search();
+    });
+    // search function
+    articlePage.home.search = function(){
+        let filter = document.getElementById("searchInput").value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                let title = card.querySelector(".card-question").textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+    }
+
+  }

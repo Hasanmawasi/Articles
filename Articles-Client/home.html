@@ -76,19 +76,19 @@
         </div>
     </main>
     <script>
-        document.getElementById("searchInput").addEventListener("keyup", function() {
-            let filter = this.value.toLowerCase();
-            let cards = document.querySelectorAll(".card");
+        // document.getElementById("searchInput").addEventListener("keyup", function() {
+        //     let filter = this.value.toLowerCase();
+        //     let cards = document.querySelectorAll(".card");
 
-            cards.forEach(card => {
-                let title = card.querySelector(".card-question").textContent.toLowerCase();
-                if (title.includes(filter)) {
-                    card.classList.remove("hidden");
-                } else {
-                    card.classList.add("hidden");
-                }
-            });
-        });
+        //     cards.forEach(card => {
+        //         let title = card.querySelector(".card-question").textContent.toLowerCase();
+        //         if (title.includes(filter)) {
+        //             card.classList.remove("hidden");
+        //         } else {
+        //             card.classList.add("hidden");
+        //         }
+        //     });
+        // });
     </script>
     <footer>
         <div class="border"></div>
@@ -96,5 +96,9 @@
             copy right 
         </div>
     </footer>
+    <script src="JS/article_pages.js" ></script>
+    <script>
+        articlePage.loadFor("home");
+    </script>
 </body>
 </html>
